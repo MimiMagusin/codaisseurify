@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe "Artist Show" do
-  let!(:song1) {create :song, title: "Ik klom eens op een heg", release_year: 1996}
-  let!(:song2) {create :song, title: "Ik klom eens op een andere heg", release_year: 1997}
+  let!(:song1) {create :song, title: "Ik klom eens op een heg", release_year: 1996, artist: artist1}
+  let!(:song2) {create :song, title: "Ik klom eens op een andere heg", release_year: 1997, artist: artist1}
 
-  let!(:artist1) { create :artist, first_name: "Listing Name 1", last_name: "Lastname", profile_picture: "I am beautiful!", song: [song1, song2] }
+  let!(:artist1) { create :artist, first_name: "Listing Name 1", last_name: "Lastname", profile_picture: "I am beautiful!" }
 
   describe "Visitor viewing the artist show page" do
 
