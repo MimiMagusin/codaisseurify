@@ -1,0 +1,10 @@
+<h1>Overview Artists:</h1>
+
+<p> <% @artists.each do |artist| %>
+        <div class="row">
+          <div class="col-md-7">
+            <h4><%= artist.first_name %></h4>
+
+          </div>
+        </div>
+      <%end%></p>
