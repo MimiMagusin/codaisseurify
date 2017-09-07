@@ -1,5 +1,5 @@
 require 'rails_helper'
-describe "Artist Views" do
+describe "Artist Index" do
   let!(:artist1) { create :artist, first_name: "Listing Name 1", last_name: "Lastname", profile_picture: "I am beautiful!" }
   let!(:artist2) { create :artist, first_name: "Listing Name 2", last_name: "Lastname" }
   let!(:artist3) { create :artist, first_name: "Another users artist" }
