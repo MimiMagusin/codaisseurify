@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+Song.destroy_all
+Artist.destroy_all
+
 describe "Artist Show" do
   let!(:song1) {create :song, title: "Ik klom eens op een heg", release_year: 1996, artist: artist1}
   let!(:song2) {create :song, title: "Ik klom eens op een andere heg", release_year: 1997, artist: artist1}
@@ -9,7 +12,7 @@ describe "Artist Show" do
   describe "Visitor viewing the artist show page" do
 
     it "shows all songs of artist" do
-      visit artist_path(artist.id)
+      visit artists_path(:id)
 
       expect(page).to have_text("Ik klom eens op een heg")
       expect(page).to have_text("Ik klom eens op een andere heg")

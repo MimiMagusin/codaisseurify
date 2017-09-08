@@ -1,1 +1,8 @@
 <h4>"This application was built in 2017"</h4>
+  <h4> <%= @artist.full_name %></h4>
+  <h4>picture: <%= @artist.profile_picture %></h4>
+
+<p> <% @artist.songs.each do |song| %>
+            <h4><%= song.title %></h4>
+            <h4><%= song.release_year %></h4>
+    <%end%> </p>
