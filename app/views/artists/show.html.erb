@@ -3,7 +3,7 @@
   <h4>picture: <%= @artist.profile_picture %></h4>
 
 <p> <% @artist.songs.each do |song| %>
-            <h4>title: <%= song.title %> <%= link_to "Delete Song", song_path(@song.id), method: :delete, data: { confirm: "Are you sure?"}, class: "links" %></h4>
+            <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
             <h4>release year: <%= song.release_year %></h4>
     <%end%> </p>
 
