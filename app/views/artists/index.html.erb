@@ -4,9 +4,13 @@
         <div class="row">
           <div class="col-md-7">
             <h4><%= link_to artist.full_name, artist_path(artist.id) %></h4>
-            <h4><% @aritst.photos.each do |photo| %>
-  <%= image_tag photo.image %>
-<% end %></h4>
+            <p><% @event.photos.each do |photo| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= image_tag photo.image.thumbnail %>
+  </div>
+</div>
+<% end %></p>
 
           </div>
         </div>

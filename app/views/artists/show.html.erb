@@ -1,8 +1,12 @@
 <h4>"This application was built in 2017"</h4>
   <h4> <%= @artist.full_name %></h4>
-  <h4><% @artist.photos.each do |photo| %>
-  <%= image_tag photo.image %>
-<% end %>%></h4>
+  <p><% @event.photos.each do |photo| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= image_tag photo.image.thumbnail %>
+  </div>
+</div>
+<% end %></p>
 
 <p> <% @artist.songs.each do |song| %>
             <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
