@@ -11,5 +11,9 @@ RSpec.describe Song, type: :model do
     it { is_expected.to validate_length_of(:title).is_at_most(50) }
   end
 
+  describe "associations" do
+    it { is_expected.to belong_to :artist }
+  end
+
 
 end
