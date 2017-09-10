@@ -15,3 +15,6 @@ artist_2 = Artist.create!(first_name: "Humpty", last_name: "Dumpty", stage_name:
 
 song1 = Song.create!(title: "Ik klom eens op een heg", release_year: 1985, artist: artist_1)
 song2 = Song.create!(title: "Ik klom eens op een andere heg", release_year: 1997, artist: artist_1)
+
+photo1 = Photo.create!(remote_image_url: "http://res.cloudinary.com/dwgyjfcoy/image/upload/v1505057561/Humpty-games_ccggo1.png", artist: artist_2)
+photo2 = Photo.create!(remote_image_url: "https://cloudinary.com/console/media_library#/dialog/image/upload/coole_kever_c9bxqn", artist: artist_1)
