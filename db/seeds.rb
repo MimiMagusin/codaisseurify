@@ -10,8 +10,8 @@ Artist.destroy_all
 Song.destroy_all
 
 
-artist_1 = Artist.create!(first_name: "Hansje Pansje", last_name: "Kevertje", stage_name: "The Beatle!", profile_picture: "A swinging beetle of course")
-artist_2 = Artist.create!(first_name: "Humpty", last_name: "Dumpty", stage_name: "The Raging Egg", profile_picture: "A raging egg")
+artist_1 = Artist.create!(first_name: "Hansje Pansje", last_name: "Kevertje", stage_name: "The Beatle!", remote_image_url: "http://res.cloudinary.com/dwgyjfcoy/image/upload/v1505057560/coole_kever_c9bxqn.jpg")
+artist_2 = Artist.create!(first_name: "Humpty", last_name: "Dumpty", stage_name: "The Raging Egg", remote_image_url: "http://res.cloudinary.com/dwgyjfcoy/image/upload/v1505059324/xuhskyjfjetpxagggiqe.png")
 
 song1 = Song.create!(title: "Ik klom eens op een heg", release_year: 1985, artist: artist_1)
 song2 = Song.create!(title: "Ik klom eens op een andere heg", release_year: 1997, artist: artist_1)
