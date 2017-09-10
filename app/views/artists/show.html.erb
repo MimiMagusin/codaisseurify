@@ -3,6 +3,12 @@
   <h4>picture: <%= @artist.profile_picture %></h4>
 
 <p> <% @artist.songs.each do |song| %>
-            <h4><%= song.title %></h4>
-            <h4><%= song.release_year %></h4>
+            <h4>title: <%= song.title %></h4>
+            <h4>release year: <%= song.release_year %></h4>
     <%end%> </p>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading"> Add song</div>
+<p>  <div class="panel-body">
+      <%= render 'songs/form' %>
+    </div></p>
