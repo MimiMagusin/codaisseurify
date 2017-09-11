@@ -7,19 +7,17 @@
             <h4>release year: <%= song.release_year %></h4>
     <%end%> </p>
 
-    <div class="panel panel-primary">
-        <div class="panel-heading"> Add song</div>
-<p>  <div class="panel-body">
+<div class="panel panel-primary">
+  <div class="panel-heading"> Add song</div>
+    <div class="panel-body">
       <%= render 'songs/form' %>
-    </div></p>
+    </div>
 
 <div class="panel panel-primary">
-<div class="panel-heading"> Edit or delete artist</div>
-
-<hr />
-
-<div class="flexbox-row">
-<p><%= link_to "Back to all Artists", artists_path, class: "links" %></p>
-<br>
-<p><%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure? Note: All songs belonging to artist will be destroyed."}, class: "links" %></p>
+  <div class="panel-heading"> Artists</div>
+    <hr />
+      <div class="flexbox-row">
+        <p><%= link_to "Back to all Artists", artists_path, class: "links" %></p>
+        <br>
+        <p><%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure? Note: All songs belonging to artist will be destroyed."}, class: "links" %></p>
 </div>
