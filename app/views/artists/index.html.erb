@@ -1,27 +1,14 @@
 <div class="panel panel-default">
-  <div class="panel-heading"><h1>Overview Artists:</h1></div>
+  <div class="panel-heading panel-heading-custom"><h1>Overview Artists:</h1></div>
     <div class="panel-body">
 
+    <% @artists.each do |artist| %>
+      <div class="col-sm-4">
+        <h4 class = "artist-name"><%= link_to artist.full_name, artist_path(artist.id), class: "links" %></h4>
+        <%= image_tag artist.image.thumbnail, class: "img-responsive center-block small-image" %>
 
-  <% @artists.each do |artist| %>
-    <div class="col-sm-4">
-      <div >
-        <%= image_tag artist.image.thumbnail, class: "small-image" %>
-        <h4><%= link_to artist.full_name, artist_path(artist.id), class: "links" %></h4>
       </div>
-    </div>
-  <%end%>
-
+    <%end%>
 
     </div>
-</div>
-
-<div class="card" style="width: 20rem;">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
 </div>

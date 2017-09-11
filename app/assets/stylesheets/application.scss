@@ -17,12 +17,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.small-image {
-  width: 20em;
-  border-radius: 50%;
+body{
+  background-color: #e1dae5;
 }
 
-.link {
-  text-align: center;
+.small-image{
+  border-radius: 50%;
+  width: 20em;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
 
+.artist-name {
+  margin-top: 5em;
+  text-align: center;
+}
+
+.panel-default > .panel-heading-custom {
+  background: #16012d;
+  color: #fffacc;
+  border-color: #16012d;
+  text-align: center;
+}
+
+.panel {
+  width: 80%;
+  display: block;
+  position: relative;
+  left: 10%;
+  top: 100px;
+  border-color: #16012d;
+  background-color: #fffacc;
 }
