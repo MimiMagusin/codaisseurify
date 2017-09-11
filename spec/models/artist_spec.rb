@@ -10,8 +10,8 @@ RSpec.describe Artist, type: :model do
     end
   end
 
-describe "associations" do
-  it { is_expected.to have_many :songs }
-end
+  describe "associations" do
+    it { is_expected.to have_many :songs }
+  end
 
 end

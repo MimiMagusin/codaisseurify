@@ -1,23 +1,25 @@
-<h4>"This application was built in 2017"</h4>
   <h4> <%= @artist.full_name %></h4>
 
 
-<p> <% @artist.songs.each do |song| %>
-            <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
-            <h4>release year: <%= song.release_year %></h4>
-    <%end%> </p>
+<p>
+  <% @artist.songs.each do |song| %>
+      <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
+      <h4>release year: <%= song.release_year %></h4>
+    <%end%>
+</p>
 
 <div class="panel panel-primary">
   <div class="panel-heading"> Add song</div>
     <div class="panel-body">
       <%= render 'songs/form' %>
     </div>
+</div>
 
 <div class="panel panel-primary">
   <div class="panel-heading"> Artists</div>
-    <hr />
-      <div class="flexbox-row">
-        <p><%= link_to "Back to all Artists", artists_path, class: "links" %></p>
-        <br>
-        <p><%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure? Note: All songs belonging to artist will be destroyed."}, class: "links" %></p>
+    <div class="flexbox-row">
+      <p><%= link_to "Back to all Artists", artists_path, class: "links" %></p>
+      <br>
+      <p><%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure? Note: All songs belonging to artist will be destroyed."}, class: "links" %></p>
+    </div>
 </div>
