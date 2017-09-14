@@ -9,13 +9,12 @@
             <hr>
           <%end%>
       </p>
+      <hr>
+      <hr>
+      <%= render 'songs/form' %>
+      <hr>
+      <hr>
 
-      <div class="panel panel-primary add-song">
-        <div class="panel-heading"> Add song</div>
-          <div class="panel-body">
-            <%= render 'songs/form' %>
-          </div>
-      </div>
 
 
       <p><%= link_to "Back to all Artists", artists_path, class: "btn btn-default" %></p>
