@@ -1,4 +1,6 @@
 class Api::SongsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def create
     song = Song.new(song_params)
 
@@ -22,10 +24,13 @@ class Api::SongsController < ApplicationController
 
 
 
+
+
+
   private
 
   def song_params
-    params.require(:song).permit(:title, :release_year, :artist_id
+    params.require(:song).permit(:title, :release_year, :artist_id)
   end
-  
+
 end
