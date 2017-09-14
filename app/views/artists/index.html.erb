@@ -3,10 +3,12 @@
     <div class="panel-body">
 
     <% @artists.each do |artist| %>
-      <div class="col-sm-4">
-        <h4 class = "artist-name"><%= link_to artist.full_name, artist_path(artist.id), class: "links" %></h4>
-        <%= image_tag artist.image.thumbnail, class: "img-responsive center-block small-image" %>
+    <div class="card" style="width: 125rem;">
+        <div class="col-sm-4">
+          <%= image_tag artist.image.thumbnail, class: "img-responsive center-block card-img-top" %>
+          <h4 class = "artist-name"><%= link_to artist.full_name, artist_path(artist.id), class: "links card-title" %></h4>
 
+        </div>
       </div>
     <%end%>
 

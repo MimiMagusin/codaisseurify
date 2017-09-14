@@ -17,20 +17,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body{
-  background-color: white;
-}
 
-.small-image{
+.card-img-top{
   border-radius: 50%;
-  width: 20em;
-  margin-top: 30px;
-  margin-bottom: 80px;
+  height:  400px;
 }
 
 .artist-name {
-  margin-top: 5em;
   text-align: center;
+}
+
+.card {
+  margin-left: 10rem;
 }
 
 .panel-default > .panel-heading-custom {
@@ -38,6 +36,8 @@ body{
   color: white;
   border-color: #16012d;
   text-align: center;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .panel {
@@ -47,5 +47,10 @@ body{
   left: 10%;
   top: 100px;
   border-color: #16012d;
-  background-color: #fffacc;
+}
+
+.add-song {
+  width: 30%;
+  position: relative;
+  left: 100rem;
 }
