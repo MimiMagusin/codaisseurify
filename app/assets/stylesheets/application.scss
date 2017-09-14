@@ -16,3 +16,41 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.card-img-top{
+  border-radius: 50%;
+  height:  400px;
+}
+
+.artist-name {
+  text-align: center;
+}
+
+.card {
+  margin-left: 10rem;
+}
+
+.panel-default > .panel-heading-custom {
+  background: #16012d;
+  color: white;
+  border-color: #16012d;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.panel {
+  width: 80%;
+  display: block;
+  position: relative;
+  left: 10%;
+  top: 100px;
+  border-color: #16012d;
+}
+
+.add-song {
+  width: 30%;
+  position: relative;
+  left: 100rem;
+}

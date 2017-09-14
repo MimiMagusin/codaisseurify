@@ -1,26 +1,15 @@
 require 'rails_helper'
-describe "Delete artist" do
-  let!(:artist1) { create :artist, first_name: "Listing Name 1", last_name: "Lastname" }
-  let!(:artist2) { create :artist, first_name: "Listing Name 2", last_name: "Lastname" }
-  let!(:artist3) { create :artist, first_name: "Another users artist" }
 
-  describe "Visitor viewing the list of artists" do
+describe "Delete artist " do
 
-    it "sees button delete artist" do
-      visit artists_url
 
-      expect(page).to have_text("Listing Name 1 Lastname")
-      expect(page).to have_text("Listing Name 2")
+  pending "Visitor clicking delete" do
+    visit artist_path(artist.id)
+
+    it "deletes the artist" do
+      let(:artist)  { create :artist, first_name: "Hello", last_name: "Kitty" }
+      expect change(Artist, :count).by(-1)
     end
   end
 
-  describe "Visitor clicking delete button" do
-    it "deletes artist and all songs" do
-      visit artists_url
-
-      click_on artist1.full_name
-
-      expect(page).to have_content "This application was built in 2017"
-    end
-  end
 end

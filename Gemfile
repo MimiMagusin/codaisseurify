@@ -47,6 +47,14 @@ group :test do
   gem 'capybara', '~> 2.9', '>= 2.9.1'
   gem 'shoulda-matchers', '~> 3.1'
 end
+group :development, :test do
+  gem 'selenium-webdriver'
+  gem "chromedriver-helper"
+end
+
+group :test do
+  gem 'database_cleaner'
+end
 
 group :production do
   gem 'rails_12factor'
