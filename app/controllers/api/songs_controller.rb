@@ -3,10 +3,7 @@ class Api::SongsController < ApplicationController
     song = Song.new(song_params)
 
     if song.save
-      render status: 201, json: {
-        message: "song successfully created",
-        song: song
-      }.to_json
+      render status: 200, json: song
     else
       render status: 422, json: {
         errors: song.errors
@@ -24,10 +21,11 @@ class Api::SongsController < ApplicationController
   end
 
 
+
   private
 
   def song_params
     params.require(:song).permit(:title, :release_year, :artist_id
   end
-end
+  
 end
