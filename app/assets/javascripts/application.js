@@ -22,18 +22,40 @@
 function submitSong(event) {
 
   function createSong(title) {
+    var newSong = { title: title};
+
+    $.ajax({
+       type: "POST",
+       url: "/api/artists/:artist_id/songs.json",
+       data: JSON.stringify({
+         song: newSong
+    }),
+       contentType: "application/json",
+       dataType: "json"
+    })
+
+    .done(function(data) {
+       console.log(data);
 
     var listItem = $('<li></li>');
     listItem.addClass("song");
 
     var label = $('<label></label>');
-  
+
     label.html(title);
 
 
     listItem.append(label);
 
     $("#songlist").append( listItem );
+
+  })
+
+    .fail(function(error) {
+      console.log(error)
+      error_message = error.responseJSON.title[0];
+      showError(error_message);
+    });
   }
 
 function nextSongId() {
