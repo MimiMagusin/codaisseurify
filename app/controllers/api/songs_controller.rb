@@ -1,6 +1,11 @@
 class Api::SongsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
+  def new
+    song = Song.find(params[:id])
+    song = Song.new
+  end
+
   def create
     song = Song.new(song_params)
 
