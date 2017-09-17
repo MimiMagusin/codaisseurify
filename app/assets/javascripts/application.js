@@ -27,6 +27,7 @@ function submitSong(event) {
     listItem.addClass("song");
 
     var label = $('<label></label>');
+  
     label.html(title);
 
 
