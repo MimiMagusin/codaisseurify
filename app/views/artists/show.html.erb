@@ -2,16 +2,28 @@
   <div class="panel-heading panel-heading-custom">  <h4> <%= @artist.full_name %></h4></div>
     <div class="panel-body">
 
-      <p>
-        <% @artist.songs.each do |song| %>
-            <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
-            <h4>release year: <%= song.release_year %></h4>
-            <hr>
-          <%end%>
-      </p>
+      <% @artist.songs.each do |song| %>
+        <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
+        <h4>release year: <%= song.release_year %></h4>
+        <hr>
+      <%end%>
+
+      <ul id="songlist">
+        <li class="song">
+          <label for="song-1">A song</label>
+        </li>
+      </ul>
+
       <hr>
       <hr>
-      <%= render 'songs/form' %>
+      <form onSubmit="Add Song; return false">
+        <p><strong>Name Artist:</strong> <%= @artist.full_name %></p>
+
+           <input type="hidden" class= "new-song" value: @artist.id >
+           <input type="text" class="new-song" placeholder="Title">
+
+        <hr>
+      </form>
       <hr>
       <hr>
 
@@ -23,3 +35,40 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function submitSong() {
+      function createSong(title) {
+        // create a list item
+        var listItem = document.createElement("li");
+        listItem.className = "song";
+
+
+        // create a label that holds the title and add it to the list item
+        var label = document.createElement("label");
+        label.innerHTML = title;
+        listItem.appendChild(label);
+
+        // add the list item with the checkbox, the whitespace and the label to
+        // the list
+        var list = document.getElementById("songlist");
+        list.appendChild(listItem);
+      }
+
+      var inputField = document.getElementsByClassName("new-song");
+      var newSongTitle = inputField.value;
+      createSong(newSongTitle);
+
+      // reset the value of the inputField to make it empty and
+      // ready to create new songs
+      inputField.value = null;
+
+      // Every song has it's own id so we can add that to the corresponding label's
+      // "for" attribute to make sure that when we click the label, the checkbox
+      // toggles
+      function nextSongId() {
+        return document.getElementsByClassName("song").length + 1;
+      }
+    }
+
+</script>
