@@ -27,7 +27,6 @@ function submitSong(event) {
     listItem.addClass("song");
 
     var label = $('<label></label>');
-    label.attr('for', checkboxId);
     label.html(title);
 
 
@@ -55,6 +54,6 @@ function cleanUpDoneSongs(event) {
 }
 
 $(document).ready(function() {
-  $("form").bind('submit', submitSong);
-  $("#clean-up").bind('click', cleanUpDoneSongs);
-});
+   $("form").bind('submit', submitSong);
+   $("#clean-up").bind('click', cleanUpDoneSongs);
+ });
