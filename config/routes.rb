@@ -5,4 +5,10 @@ root "artists#index"
   resources :artists do
     resources :songs, only: [:create, :destroy]
   end
+
+  namespace :api do
+    resources :artists do
+      resources :songs, only: [:create, :destroy]
+    end
+  end
 end

@@ -2,20 +2,37 @@
   <div class="panel-heading panel-heading-custom">  <h4> <%= @artist.full_name %></h4></div>
     <div class="panel-body">
 
-      <p>
-        <% @artist.songs.each do |song| %>
-            <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
-            <h4>release year: <%= song.release_year %></h4>
-            <hr>
-          <%end%>
-      </p>
-      <hr>
-      <hr>
-      <%= render 'songs/form' %>
-      <hr>
-      <hr>
+      <% @artist.songs.each do |song| %>
+        <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
+        <h4>release year: <%= song.release_year %></h4>
+        <hr>
+      <%end%>
+
+      <div class="panel panel-default">
+        <div class="panel-heading panel-heading-custom">  <h5> Add your own song!</h5></div>
+          <div class="panel-body">
+            <form>
+             <input type="text" id="new-song" placeholder="What needs to be sung?">
+            </form>
+
+            <ul id="songlist">
+             <li class="song">
+                <label for="song-1">Sing a song</label>
+              </li>
+            </ul>
+
+            <a href="#" id="clean-up">Clean up</a>
+
+          </div>
+        </div>
+      </div>
 
 
+
+
+
+      <hr>
+      <hr>
 
       <p><%= link_to "Back to all Artists", artists_path, class: "btn btn-default" %></p>
       <p><%= link_to "Delete Artist", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure? Note: All songs belonging to artist will be destroyed."}, class: "btn btn-default" %></p>
