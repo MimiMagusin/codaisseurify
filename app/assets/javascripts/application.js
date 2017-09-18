@@ -87,6 +87,17 @@ function cleanUpDoneSongs(event) {
   event.preventDefault();
   $.when($(".song").remove())
 }
+function deleteSong(songId) {
+  $.ajax({
+    type: "DELETE",
+    url: "/songs/" + songId + ".json",
+    contentType: "application/json",
+    dataType: "json"
+  })
+  .done(function(data) {
+    $('tr[data-id="'+songId+'"]').remove();
+  });
+}
 
 $(document).ready(function() {
    $("form").bind('submit', submitSong);

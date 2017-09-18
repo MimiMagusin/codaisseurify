@@ -1,12 +1,17 @@
 <div class="panel panel-default">
   <div class="panel-heading panel-heading-custom">  <h4> <%= @artist.full_name %></h4></div>
     <div class="panel-body">
+      <ul id="songlist">
+        <% @artist.songs.each do |song| %>
+          <li class="song">
+            <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
+            <h4>release year: <%= song.release_year %></h4>
+            <hr>
+          </li>
+        <%end%>
+      </ul>
 
-      <% @artist.songs.each do |song| %>
-        <h4>title: <%= song.title %> <%= link_to "Delete", artist_song_path(@artist, song), :method => :delete %></h4>
-        <h4>release year: <%= song.release_year %></h4>
-        <hr>
-      <%end%>
+<a href="#" id="clean-up">Clean up</a>
 
       <div class="panel panel-default">
         <div class="panel-heading panel-heading-custom">  <h5> Add your own song!</h5></div>
@@ -15,13 +20,7 @@
              <input type="text" id="new-song" placeholder="What needs to be sung?">
             </form>
 
-            <ul id="songlist">
-             <li class="song">
-                <label for="song-1">Sing a song</label>
-              </li>
-            </ul>
 
-            <a href="#" id="clean-up">Clean up</a>
 
           </div>
         </div>
