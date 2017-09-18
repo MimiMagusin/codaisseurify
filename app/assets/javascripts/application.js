@@ -51,7 +51,7 @@ function submitSong(event) {
     $("#songlist").append( listItem );
 
     })
-
+    location.reload();
   }
 
   function showError(message) {
