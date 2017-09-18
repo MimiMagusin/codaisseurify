@@ -50,11 +50,11 @@ function submitSong(event) {
 
     $("#songlist").append( listItem );
 
-  })
+    })
 
   }
 
-function showError(message) {
+  function showError(message) {
     var errorHelpBlock = $('<span class="help-block"></span>')
       .attr('id', 'error_message')
       .text(message);
@@ -64,15 +64,15 @@ function showError(message) {
       .append(errorHelpBlock);
   }
 
-function resetErrors() {
-  $("#error_message").remove();
-  $("#formgroup-title").removeClass("has-error");
-}
+  function resetErrors() {
+    $("#error_message").remove();
+    $("#formgroup-title").removeClass("has-error");
+  }
 
 
-function nextSongId() {
-  return $(".song").length + 1;
-}
+  function nextSongId() {
+    return $(".song").length + 1;
+  }
     // stop the form from doing the default action, submitting...
     event.preventDefault();
 
@@ -81,12 +81,14 @@ function nextSongId() {
     createSong(title);
 
     $("#new-song").val(null);
-  }
+}
+
 
 function cleanUpDoneSongs(event) {
   event.preventDefault();
   $.when($(".song").remove())
 }
+
 function deleteSong(songId) {
   $.ajax({
     type: "DELETE",
