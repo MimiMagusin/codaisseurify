@@ -1,18 +1,15 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @song = Song.new
-  end
-
   def create
-    @song = Song.new(song_params)
+    artist = Artist.find(params[:artist_id])
+    @song = artist.song.new(song_params)
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to @song.artist, notice: 'Song has been added' }
+        format.html { redirect_to artists_path, notice: 'song was successfully created.' }
       else
-        format.html { redirect_to @song.artist, notice: "Song was has not been added" }
+        format.html { redirect_to songs_path }
       end
     end
   end

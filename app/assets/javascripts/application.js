@@ -9,24 +9,27 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require rails-ujs
-//= require_tree .
-
-// application.js
 
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require_tree .
+
+// application.js
+
+
 function submitSong(event) {
+  event.preventDefault();
+  resetErrors();
 
   function createSong(title) {
     var newSong = { title: title};
 
+    var pathname = window.location.pathname;
+
     $.ajax({
        type: "POST",
-       url: "/api/artists/:artist_id/songs.json",
+       url: "/api" + pathname + "/songs",
        data: JSON.stringify({
          song: newSong
     }),
@@ -43,20 +46,29 @@ function submitSong(event) {
     var label = $('<label></label>');
 
     label.html(title);
-
-
     listItem.append(label);
 
     $("#songlist").append( listItem );
 
   })
 
-    .fail(function(error) {
-      console.log(error)
-      error_message = error.responseJSON.title[0];
-      showError(error_message);
-    });
   }
+
+function showError(message) {
+    var errorHelpBlock = $('<span class="help-block"></span>')
+      .attr('id', 'error_message')
+      .text(message);
+
+    $("#formgroup-title")
+      .addClass("has-error")
+      .append(errorHelpBlock);
+  }
+
+function resetErrors() {
+  $("#error_message").remove();
+  $("#formgroup-title").removeClass("has-error");
+}
+
 
 function nextSongId() {
   return $(".song").length + 1;
