@@ -29,6 +29,6 @@ Created for the 9 week intensive program at Codaisseur. The second project I bui
 
 <h3>Author</h3>
  <ul>
-  <li>Mimi Magusin, based on the reader of Codaisseur Academy.</li>
+  <li>Mimi Magusin</li>
  </ul>
 
